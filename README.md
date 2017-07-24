@@ -11,7 +11,7 @@ git clone https://github.com/rkuga/MSCOCO.git
 cd MSCOCO
 git clone https://github.com/pdollar/coco.git
 ```
-  <br />
+<br />
 step2.<br />
 make __init__.py
 ```
@@ -25,7 +25,7 @@ your data_dir is<br>
 yourpath|---annotations<br>
 　　　　　　　|---train2014<br>
 　　　　　　　|---val2014<br>
-  <br />
+<br />
 step4.<br />
 if your need instance segmentations
 ```
@@ -38,14 +38,14 @@ if your need semantic segmentations
 python coco.py --data_dir yourpath --data_type train --mode semantics
 ```
 also create categorical image  
- <br /> 
+<br /> 
   
 if your need bounding boxs
 ```
 python coco.py --data_dir yourpath --data_type train --mode bboxs
 ```
 Bbox's color means its object class  
-  <br />
+<br />
   
 takes so much time.
 
