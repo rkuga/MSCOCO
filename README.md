@@ -4,7 +4,7 @@ This script create a image for semantic/instance segmentation and object detecti
 <br />
 ### how to use
 step1.<br>
-glone the official API
+clone the official API
 
 ```
 git clone https://github.com/rkuga/MSCOCO.git
