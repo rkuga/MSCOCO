@@ -132,7 +132,6 @@ elif args.data_type=='val':
 coco = MYCOCO(json_path)
 imgIds = coco.getImgIds()
 imgs = coco.loadImgs(imgIds)
-categorie_ids=[]
 
 if args.mode=='semantics':
     out_path=image_path+'_semantics/'
