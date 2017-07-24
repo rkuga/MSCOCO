@@ -19,11 +19,11 @@ make __init__.py
 ```
 
 step3.
-download the dataset
-your data_dir is
-yourpath|---annotations
-        |---train2014
-        |---val2014
+download the dataset<br>
+your data_dir is<br>
+yourpath|---annotations<br>
+        |---train2014<br>
+        |---val2014<br>
    
 step4.
 if your need instance segmentations
