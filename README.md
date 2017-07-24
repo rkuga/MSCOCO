@@ -46,6 +46,14 @@ python coco.py --data_dir yourpath --data_type train --mode bboxs
 ```
 Bbox's color means its object class  
 <br />
-  
+
+if you need captions
+```
+python coco.py --data_dir yourpath --data_type train --mode captions
+```
+<br />
+
+
+
 takes so much time.
 
