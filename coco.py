@@ -1,7 +1,6 @@
 import coco.PythonAPI.pycocotools.coco as coco
 import numpy as np
 import cv2
-import pylab
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -10,6 +9,7 @@ import argparse
 from matplotlib.patches import Polygon
 from matplotlib.collections import PatchCollection
 import os
+
 
 def SaveFigureAsImage(fileName, fig=None, **kwargs):
     ''' Save a Matplotlib figure as an image without borders or frames. (from https://gist.github.com/marquisthunder/ce4b2ede4c3786d0a5d7)
@@ -71,6 +71,10 @@ class MYCOCO(coco.COCO):
         """
         if len(anns) == 0:
             return 0
+        ax = plt.gca()
+        ax.set_autoscale_on(False)
+        polygons=[]
+        color=[]
         for ann in anns:
             c = (np.random.random((1, 3))*0.6+0.4).tolist()[0]
             if 'segmentation' in ann:
