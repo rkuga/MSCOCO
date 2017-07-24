@@ -14,16 +14,17 @@ git clone https://github.com/pdollar/coco.git
 
 step2.
 make __init__.py
-```vim coco/__init__.py
-   vim coco/PythonAPI/__init__.py
+```
+vim coco/__init__.py
+vim coco/PythonAPI/__init__.py
 ```
 
 step3.
 download the dataset<br>
 your data_dir is<br>
 yourpath|---annotations<br>
-        |---train2014<br>
-        |---val2014<br>
+　　　　　　　|---train2014<br>
+　　　　　　　|---val2014<br>
    
 step4.
 if your need instance segmentations
