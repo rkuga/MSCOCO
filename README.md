@@ -18,7 +18,7 @@ make __init__.py  <br />
 vim coco/__init__.py
 vim coco/PythonAPI/__init__.py
 ```
-<br />
+
 step3.<br />
 download the dataset<br>
 your data_dir is<br>
@@ -31,8 +31,8 @@ if your need instance segmentations
 ```
 python coco.py --data_dir yourpath --data_type train --mode instances
 ```
-<br />
-  
+
+ 
 if your need semantic segmentations
 ```
 python coco.py --data_dir yourpath --data_type train --mode semantics
