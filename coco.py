@@ -108,22 +108,6 @@ class MYCOCO(coco.COCO):
                     cv2.rectangle(img, (int(x),int(y)), (int(x+width),int(y+height)), tuple(dictionary["palette"][ann['category_id']-dictionary["sa"][index]]), 3)
         cv2.imwrite(out_path+'COCO_'+args.data_type+'2014_%012d.png'%(ann['image_id']),img)
 
-    def captions(self, anns, out_path):
-        """
-        Display the specified annotations.
-        :param anns (array of object): annotations to display
-        :return: None
-        """
-        if len(anns) == 0:
-            return 0
-        for ann in anns:
-            if 'bbox' in ann:
-                if ann['iscrowd']==0:
-                    x, y, width, height = ann['bbox']
-                    index=int(np.where(np.array(dictionary["raw"])==ann["category_id"])[0])
-                    cv2.rectangle(img, (int(x),int(y)), (int(x+width),int(y+height)), tuple(dictionary["palette"][ann['category_id']-dictionary["sa"][index]]), 3)
-        cv2.imwrite(out_path+'COCO_'+args.data_type+'2014_%012d.png'%(ann['image_id']),img)
-
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--mode', type=str, default='bboxs', help='mode')
