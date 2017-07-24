@@ -31,14 +31,22 @@ if your need instance segmentations
 ```
 python coco.py --data_dir yourpath --data_type train --mode instances
 ```
-if your need bounding boxs
-```
-python coco.py --data_dir yourpath --data_type train --mode bboxs
-```
+
+
 if your need semantic segmentations
 ```
 python coco.py --data_dir yourpath --data_type train --mode semantics
 ```
+also create categorical image
+
+
+if your need bounding boxs
+```
+python coco.py --data_dir yourpath --data_type train --mode bboxs
+```
+Bbox's color means its object class
+
+
 
 Due to my ugly implementation, it takes so much time.
 
