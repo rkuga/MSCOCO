@@ -108,6 +108,23 @@ class MYCOCO(coco.COCO):
                     cv2.rectangle(img, (int(x),int(y)), (int(x+width),int(y+height)), tuple(dictionary["palette"][ann['category_id']-dictionary["sa"][index]]), 3)
         cv2.imwrite(out_path+'COCO_'+args.data_type+'2014_%012d.png'%(ann['image_id']),img)
 
+    def captions(self, anns, out_path):
+        """
+        Display the specified annotations.
+        :param anns (array of object): annotations to display
+        :return: None
+        """
+        if len(anns) == 0:
+            return 0
+        for ann in anns:
+            if 'bbox' in ann:
+                if ann['iscrowd']==0:
+                    x, y, width, height = ann['bbox']
+                    index=int(np.where(np.array(dictionary["raw"])==ann["category_id"])[0])
+                    cv2.rectangle(img, (int(x),int(y)), (int(x+width),int(y+height)), tuple(dictionary["palette"][ann['category_id']-dictionary["sa"][index]]), 3)
+        cv2.imwrite(out_path+'COCO_'+args.data_type+'2014_%012d.png'%(ann['image_id']),img)
+
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--mode', type=str, default='bboxs', help='mode')
 parser.add_argument('--data_type', type=str, default='train', help='train/val')
@@ -171,3 +188,34 @@ elif args.mode=='bboxs':
         annIds = coco.getAnnIds(imgIds=image_id)
         anns = coco.loadAnns(annIds)
         coco.bboxs(anns,dictionary,I,out_path)
+elif args.mode=='captions':
+    if args.data_type=='train':
+        json_path=base_path + '/annotations/captions_train2014.json'
+    elif args.data_type=='val':
+        json_path=base_path + '/annotations/captions_val2014.json'
+    out_path=image_path+'_captions/'
+    if not os.path.exists(out_path):
+        os.makedirs(out_path)
+    f = open(json_path,'r')
+    json_data=json.load(f)
+    f.close()
+    caption_list=[]
+
+    for caption_data in json_data['annotations']:
+        image_id=caption_data['image_id']
+        caption=caption_data['caption']
+
+        caption = caption.replace('\n','').strip().lower()
+
+        if caption[-1]=='.':
+            caption=caption[0:-1]
+        caption_tokens = caption
+        caption_tokens += ' <EOS>'
+        caption_list.append('COCO_'+args.data_type+'2014_%012d.jpg'%(image_id) +'/'+ caption_tokens)
+
+    caption_list.sort()
+    f = open(out_path+'captions.txt', 'w')
+    for line in caption_list:
+        f.write(str(line) + "\n")
+    f.close()
+
