@@ -40,5 +40,5 @@ if your need semantic segmentations
 python coco.py --data_dir yourpath --data_type train --mode semantics
 ```
 
-
+Due to my ugly implementation, it takes so much time.
 
