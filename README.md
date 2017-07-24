@@ -47,5 +47,5 @@ python coco.py --data_dir yourpath --data_type train --mode bboxs
 Bbox's color means its object class  
   
   
-Due to my ugly implementation, it takes so much time.
+takes so much time.
 
