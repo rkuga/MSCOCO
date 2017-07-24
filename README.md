@@ -13,7 +13,7 @@ git clone https://github.com/pdollar/coco.git
 ```
 <br />
 step2.<br />
-make __init__.py  
+make __init__.py  <br />
 ```
 vim coco/__init__.py
 vim coco/PythonAPI/__init__.py
