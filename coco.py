@@ -160,6 +160,7 @@ elif args.mode=='instances':
         plt.clf()
         plt.figure(); plt.axis('off')
         plt.imshow(I)
+        # plt.imshow(np.zeros(I.shape)) # if you need mask-only images
         annIds = coco.getAnnIds(imgIds=image_id)
         anns = coco.loadAnns(annIds)
         ax=coco.instances(anns,I.shape,out_path)
