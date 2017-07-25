@@ -109,7 +109,7 @@ class MYCOCO(coco.COCO):
                 if ann['iscrowd']==0:
                     x, y, width, height = ann['bbox']
                     index=int(np.where(np.array(dictionary["raw"])==ann["category_id"])[0])
-                    cv2.rectangle(img, (int(x),int(y)), (int(x+width),int(y+height)), tuple(dictionary["palette"][ann['category_id']-dictionary["sa"][index]]), 3)
+                    cv2.rectangle(img, (int(x),int(y)), (int(x+width),int(y+height)), tuple(dictionary["palette"][ann['category_id']-dictionary["sa"][index]][::-1]), 3)
         cv2.imwrite(out_path+'COCO_'+args.data_type+'2014_%012d.png'%(ann['image_id']),img)
 
 
