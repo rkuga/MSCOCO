@@ -1,12 +1,10 @@
 # MSCOCO
-The official MSCOCO API is hard to use for me.
-<br />
-This script create a image for semantic/instance segmentation, object detection and image caption.
-
-<br />
-### how to use
-<br />
-step1.<br />
+The official MSCOCO API is hard to use for me.  
+This script create a image for semantic/instance segmentation, object detection and image caption.  
+  
+## how to use
+  
+### step1.  
 clone the official API
 
 ```
@@ -15,21 +13,21 @@ cd MSCOCO
 git clone https://github.com/pdollar/coco.git
 ```
 
-step2.<br />
-make __init__.py  <br />
+### step2.  
+make __init__.py    
 ```
 vim coco/__init__.py
 vim coco/PythonAPI/__init__.py
 ```
 
-step3.<br />
+### step3.  
 download the dataset<br>
 your data_dir is<br>
 yourpath|---annotations<br>
 　　　　　　　|---train2014<br>
 　　　　　　　|---val2014<br>
-<br />
-step4.<br />
+  
+### step4.  
 if you need instance segmentations
 ```
 python coco.py --data_dir yourpath --data_type train --mode instances
@@ -41,22 +39,22 @@ if you need semantic segmentations
 python coco.py --data_dir yourpath --data_type train --mode semantics
 ```
 also create categorical image  
-<br /> 
+  
   
 if you need bounding boxs
 ```
 python coco.py --data_dir yourpath --data_type train --mode bboxs
 ```
 Bbox's color means its object class  
-<br />
+  
 
 if you need captions
 ```
 python coco.py --data_dir yourpath --data_type train --mode captions
 ```
-<br />
+  
+  
+  
 
-
-
-takes so much time.
+instances takes so much time.
 
