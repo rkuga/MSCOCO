@@ -56,5 +56,5 @@ python coco.py --data_dir yourpath --data_type train --mode captions
   
   
 
-instances takes so much time.
+instances mode takes so much time.
 
