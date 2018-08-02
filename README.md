@@ -28,27 +28,27 @@ yourpath|---annotations<br>
 　　　　　　　|---val2014<br>
   
 ### step4.  
-if you need instance segmentations
+for instance segmentations
 ```
 python coco.py --data_dir yourpath --data_type train --mode instances
 ```
 
  
-if you need semantic segmentations
+for semantic segmentations
 ```
 python coco.py --data_dir yourpath --data_type train --mode semantics
 ```
-also create categorical image  
+with categorical images
   
   
-if you need bounding boxs
+for bounding boxs
 ```
 python coco.py --data_dir yourpath --data_type train --mode bboxs
 ```
 Bbox's color means its object class  
   
 
-if you need captions
+for captions
 ```
 python coco.py --data_dir yourpath --data_type train --mode captions
 ```
