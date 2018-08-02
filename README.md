@@ -1,6 +1,6 @@
 # MSCOCO
 The official MSCOCO API is hard to use for me.  
-This script create a image for semantic/instance segmentation, object detection and image caption.  
+This script creates images for semantic/instance segmentation, object detection and image caption.  
   
 ## how to use
   
